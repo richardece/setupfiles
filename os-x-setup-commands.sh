@@ -13,11 +13,13 @@ brew install bash # latest version of bash
 # add /usr/local/bin/bash to /etc/shells
 # chsh -s /usr/local/bin/bash
 # set brew bash as default shell
+# go to preferences-> profiles -> title-> check user and host
+# this is perfect if you work on remote machines
 brew install fortune
 brew install cowsay 
 brew install git
 brew install vcprompt
-# update bash_profile
+brew install tree
 brew cask install spectacle
 brew cask install alfred
 brew cask install keepingyouawake

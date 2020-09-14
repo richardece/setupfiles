@@ -1,3 +1,6 @@
+#originally from 
+# https://github.com/w3cj/dotfiles/
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -15,11 +18,12 @@ print_before_the_prompt () {
     dir=$PWD
     home=$HOME
     #dir=${dir/"$HOME"/"~"}
-    printf "\n $txtgrn%s@$txtgrn%s: $bldpur%s \n$txtrst" "$USER" "$HOSTNAME" "$dir"
+    printf "\n$txtgrn%s $bldgrn%s \n$txtrst" "$dir" "$(vcprompt)"
 }
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI >"
+PS1="$ "
+PS2="> "
 
 #alias
