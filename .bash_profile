@@ -27,3 +27,5 @@ PS1="$ "
 PS2="> "
 
 #alias
+alias kraken="open -a 'GitKraken' --args -p $(pwd)"
+
