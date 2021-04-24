@@ -24,8 +24,14 @@ print_before_the_prompt () {
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 PS1="$ "
-PS2="> "
+PS2="  "
 
 #alias
-alias kraken="open -a 'GitKraken' --args -p $(pwd)"
+alias kraken="open -na 'GitKraken' --args -p $(pwd)"
+#This command only opens pwd. How to add args so that it can open any directory?
 
+#For linux matlab
+#alias matlab='/usr/local/Polyspace/R2020a/bin/matlab'
+
+
+export PATH="/usr/local/opt/qt@5/bin:$PATH"

@@ -3,12 +3,19 @@
 sudo apt update
 sudo apt upgrade
 
+#7z, can be used to mount iso files
+# 7z x ubuntu-16.10-server-amd64.iso
+sudo apt-get install p7zip-full p7zip-rar
+
+
 #Visual studio code
 sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 #other configurations like git lens, c++, cmake recognition?
+
+#sudo snap install --classic code
 
 #Gitkraken
 sudo snap install gitkraken --classic
@@ -45,6 +52,10 @@ rm -R cmake-$version
 
 #qemu emulator
 
+#MISC
+sudo apt install graphviz
+sudo apt-get install -y picocom
+
 #Eclipse
 sudo apt install default-jre
 #get the latest version from https://www.eclipse.org/downloads/packages/
@@ -54,8 +65,8 @@ sudo mv eclipse-cpp-2020-06-R-linux-gtk-x86_64.tar.gz  /opt/
 cd /opt
 
 sudo tar -xvzf eclipse-cpp-2020-06-R-linux-gtk-x86_64.tar.gz
-touch eclipse.desktop
-cat > eclipse.desktop <<EOL
+sudo touch eclipse.desktop
+sudo cat > eclipse.desktop <<EOL
 [Desktop Entry]
 Name=Eclipse
 Type=Application
@@ -71,4 +82,11 @@ EOL
 sudo desktop-file-install eclipse.desktop
 
 
+#Qt
+brew install qt@5
+#update bashrc, then source command
+#export PATH="/usr/local/opt/qt@5/bin:$PATH"
 
+#Matlab2020
+#installed in usr/local/Polyspace/R2020a/bin/matlab
+sudo apt-get install matlab-support

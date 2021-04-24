@@ -30,6 +30,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 nvm install stable
 mkdir ~/workspace
 npm install -g lite-server eslint
+
 brew cask install visual-studio-code
 # update vscode settings
 # install vscode extensions
@@ -39,5 +40,30 @@ brew install cmake
 # add
 # PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
+#opencv
+#download src from https://opencv.org/releases/
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=$HOME/programs/opencv ..
+make
+make install
+#install folder is in $HOME/programs/opencv
 
 #download xcode from website, extract and drag to /Applications
+#download Fliqlo to get the beautiful screensaver
+# STM32Cube
+# STM32MXIDE
+# CCS10
+# Waveform for Analog Discovery
+
+######This is for docker GUI display
+brew install socat
+#https://www.xquartz.org
+
+
+#####zsh setup
+#Follow https://gist.github.com/kevin-smets/8568070
+#If you want to change some config run: p10k configure
+
+#fish is not posix complian tand will not execute bash shell scripts
+#To change between zsh and fish, just type fish or zsh.
+#and then type exit to go back
+
