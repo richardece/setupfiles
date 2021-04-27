@@ -1,6 +1,5 @@
 #####################
-#Strategy 1: Run an ubuntu docker and then isntall everything inside
-#Problem: error in compiling at 72%
+#OpenCV inside Docker
 
 docker run -it ubuntu bash
 
@@ -35,8 +34,6 @@ cmake -DWITH_GTK=ON -DOPENCV_EXTRA_MODULES_PATH=../openCV-contrib-$OPENCV_VERSIO
 cmake --build . -j6
 
 
-#Strategy2:
-#use dockerfile and install everything including #libqt4-dev libjasper-dev
-#still got error at 67%
+
 
 

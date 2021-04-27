@@ -62,8 +62,23 @@ brew install socat
 #####zsh setup
 #Follow https://gist.github.com/kevin-smets/8568070
 #If you want to change some config run: p10k configure
+#VS Code might not recognize the pictures in zsh integrated. So need to change its font settings
+#Go to preferences, settongs, search for font family (terminal), then add "MesloLGS NF" or any new font that you added
+
+#####fish setup
+#Follow https://gist.github.com/idleberg/9c7aaa3abedc58694df5
+brew install fish
+brew tap homebrew/cask-fonts                                 
+brew cask install font-firacode-nerd-font
+set -U theme_nerd_fonts yes
+#install additional themes
+omf install agnoster
+omf install bobthefish
+omf install batman
+#to change theme
+omf theme <theme name>
 
 #fish is not posix complian tand will not execute bash shell scripts
-#To change between zsh and fish, just type fish or zsh.
+#To change between zsh and fish, just type fish or zsh or bash
 #and then type exit to go back
 
