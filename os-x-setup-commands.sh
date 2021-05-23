@@ -23,6 +23,8 @@ brew install tree
 brew cask install spectacle
 brew cask install alfred
 brew cask install keepingyouawake
+#similar to htop and bpytop, for docker
+brew install ctop
 # set CMD+space to launch alfred
 brew cask install firefox
 # install nvm/node
