@@ -13,6 +13,9 @@ sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
+
+# or
+sudo snap install code --classic
 #other configurations like git lens, c++, cmake recognition?
 
 #sudo snap install --classic code
@@ -33,7 +36,7 @@ sudo apt install git
 sudo apt install libssl-dev
 sudo apt-get purge cmake    #delete old version
 ###Get whatever is the latest version
-version=3.18.2
+version=3.21.3
 wget https://github.com/Kitware/CMake/releases/download/v$version/cmake-$version.tar.gz
 tar -zxvf cmake-$version.tar.gz
 cd cmake-$version
@@ -83,13 +86,13 @@ sudo desktop-file-install eclipse.desktop
 
 
 #Qt
-brew install qt@5
-#update bashrc, then source command
-#export PATH="/usr/local/opt/qt@5/bin:$PATH"
 
 #Matlab2020
 #installed in usr/local/Polyspace/R2020a/bin/matlab
 sudo apt-get install matlab-support
+
+#Similar to tmux in mac
+sudo apt-get install terminator
 
 #virtualbox guest additions
 sudo apt install virtualbox-guest-utils virtualbox-guest-dkms
@@ -102,7 +105,8 @@ sudo apt-get install sshfs
 #transfer bootloader and image via tftp
 sudo apt install tftpd-hpa
 sudo systemctl status tftpd-hpa #check status of tftp
-sudo nano /etc/default/tftpd-hpa    #configure tftp settings like directory, 
+sudo gedit /etc/default/tftpd-hpa    #configure tftp settings like directory, 
+                                    # for all files inside /var/lib/tftpboot, sudo chmod 777
 sudo systemctl restart tftpd-hpa    #restart tftp
 
 #mounting filesystem via nfs
@@ -123,3 +127,40 @@ sudo service rpc-statd start    #this is needed so that the client can access th
                                 # sudo mount -o resvport -t nfs 192.168.0.166:/srv/nfs/bbb /private/nfs
                                 # bbb still can't nfs, but at least mac can
                                     # now try nfs server inside mac
+
+#Conan
+# https://docs.conan.io/en/latest/installation.html
+# Keep in mind that conan works only in python3
+sudo apt install python3-pip
+pip3 install conan
+source ~/.profile
+
+# qemu
+sudo apt install -y qemu-system-arm
+sudo apt-get install -y git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev
+sudo apt-get install -y charpath diffstat g++ gawk
+# for mender
+sudo apt install jq
+sudo apt  install docker-compose
+
+# visualize disk usage
+sudo apt install baobab
+
+#/home/richard/ssd2/ti-processor-sdk-linux-j7-evm-08_00_00_08
+# cannot be installed in ubuntu20
+# install under docker instead
+
+#docker
+# https://docs.docker.com/engine/install/ubuntu/
+# https://docs.docker.com/engine/install/linux-postinstall/
+# https://docs.docker.com/compose/install/
+    # don't forget to use the latest version
+
+#ssh
+sudo apt-get install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+#for balenaetcher
+sudo apt install fuse
+

@@ -37,6 +37,11 @@ brew cask install visual-studio-code
 # update vscode settings
 # install vscode extensions
 
+#Qt
+brew install qt@5
+#update bashrc, then source command
+#export PATH="/usr/local/opt/qt@5/bin:$PATH"
+
 brew install cmake
 #create ~/.bashrc
 # add
